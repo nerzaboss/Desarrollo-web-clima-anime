@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="WeatherNow - A modern weather web application providing real-time updates and forecasts.">
+    <meta name="keywords" content="Weather, Forecast, Web App, JavaScript, HTML, CSS">
+    <meta name="author" content="Steven Tete">
+    <title>AnimeW</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
+    <link rel="mask-icon" href="src/img/maskableIcon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" as="style">
+    <link rel="preload" fetchpriority="high" as="image" href="src/img/main.avif" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <header>
+    <nav>
+      <div>
+      <button id="myLocation"><img style="vertical-align: middle;" src="src/img/user-location-line.webp" alt="Users Location Icon"> My Location</button>
+    </div>
+    <div>
+      <a id="github" class="githubProfile" href="https://github.com/nerzaboss" target="_blank"><img src="src/img/github.ico" alt="GitHub logo" width="40" height="40"></a>
+    </div>
+    </nav>
+  </header>
+    <main class="container" id="container">
+      <div id="noSelected"><span><i class="ri-earth-line"></i> You have not written any city</span></div>
+        <div class="background" id="background">
+            <div class="searchSection" id="searchSection">
+                <h1><img src="src/img/favicon.ico" class="favicon" alt="Sun behind the clouds" width="40" height="40">Anime clima</h1>
+                <input type="text" id="cityInput" placeholder="Type a Country, State or City">
+                <br><br>
+                <button class="search" id="search"><i class="ri-search-2-line"></i> Buscar</button>
+                <br><br>
+                <div class="searchResultsContainer" id="searchResultsContainer">
+                  <p>Search Results</p>
+                  <hr>
+                  <div id="searchResults"></div>
+                </div>
+            </div>
+            <div class="weather" id="weatherInfo">
+                <h1 id="location"></h1>
+                <h2 id="weatherStatus"></h2>
+                <div class="error" id="error">
+                  <h2 id="errorText"></h2>
+                  <img src="src/img/404.webp" id="error404" alt="404">
+                </div>
+                <div class="flex">
+                  <div class="arrow" id="arrow1"></div>
+                  <div class="tooltip" id="tooltip1">
+                    <span>Temperature (Tap to change the scale)</span>
+                  </div>
+                    <div class="item" id="itemTemperature"><h2 id="temp"></h2></div>
+
+                    <div class="arrow" id="arrow2"></div>
+                    <div class="tooltip" id="tooltip2">
+                      <span>Humidity Percentage</span>
+                    </div>
+                    <div class="item" id="itemHumidity"><h2 id="humidity"></h2></div>
+                    
+                    <div class="arrow" id="arrow3"></div>
+                    <div class="tooltip" id="tooltip3">
+                      <span>Wind Speed (Meters per second)</span>
+                    </div>
+                    <div class="item" id="itemWind"><h2 id="wind"></h2></div>
+                </div>
+                <br><button id="backToSearch"><i class="ri-arrow-left-line"></i> atras</button><br>
+            </div>
+        </div>
+        <audio id="errorAudio" style="display: none;" src="src/audio/error.mp3"></audio>
+        <audio id="connectionAudio" style="display: none;" src="src/audio/connection.mp3"></audio>
+    </main>
+    <div class="alerts">
+      <div class="contentDisabled"><h1>usar telefono para mejor experienca (realmente no jasjasj)</h1><img src="src/img/404.webp" alt="404" style="max-height: 13em;"></div>
+      <div class="connectionAlerts">
+        <div class="connected" id="connected">
+          <h2 class="wifi"><img src="src/img/wifi.gif" alt="Wifi" class="wifi"> Online</h2>
+        </div>
+        <div class="disconnected" id="disconnected">
+          <h2><img src="src/img/disconnected.gif" alt="Wifi" class="disconnectedLogo"> Offline</h2>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Made with <img src="src/img/love-heart.gif" alt="Heart Gif" style="vertical-align: middle;" width="40" height="40"> by <a class="StevenTete" href="https://github.com/StevenTete" rel="noopener norreferer">StevenTete</a></p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="src/extra.js"></script>
+</body>
+</html>
